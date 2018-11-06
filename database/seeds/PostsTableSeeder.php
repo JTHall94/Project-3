@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 
 class PostsTableSeeder extends Seeder
 {
-  $jacob = \App\User::where('name', 'Jacob')->first();
+
     /**
      * Run the database seeds.
      *
@@ -12,9 +12,13 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
+
+      $jacob = \App\User::where('name', 'Jacob')->first();
+
+
       $post = new \App\Post;
-      $post->name = $jacob->name . ' The Problem with America';
-      $post->content= 'The problem with America is packs of wild dogs controlling most of our major cities.'
+      $post->name = $jacob->name;
+      $post->content= 'The problem with America is packs of wild dogs controlling most of our major cities.';
       $post->user_id = $jacob->id;
       $post->save();
     }
