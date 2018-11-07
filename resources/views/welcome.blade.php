@@ -2,12 +2,13 @@
 
 @section('content')
 <div class="flex-center position-ref full-height">
+    <h1 id="Main Title" class="text-center">Fumblr</h1>
     @if (Route::has('login'))
-        <div class="top-right welcome-links">
+        <div class="text-center">
             @auth
-                <a href="{{ url('/home') }}">Post Something</a>
+                <a href="{{ url('/home') }}" id="PostSmthn">Post Something</a>
             @else
-                <a href="{{ route('login') }}">login</a>
+                <a href="{{ route('login') }}" id="welcomelog">Login</a>
 
                 @if (Route::has('register'))
                     <a href="{{ route('register') }}">Register</a>
@@ -15,15 +16,11 @@
             @endauth
         </div>
     @endif
-
-        <h1 id="Main Title">Fumblr</h1>
-
 </div>
 
-<a name="posts">
-<div>
+<div id="postlist">
     @foreach ($posts as $post)
-    <div class="card" style="width: 18rem;">
+    <div class="card mt-3 mb-3" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">{{ $post->name }}</h5>
           <p class="card-text">{{$post->content}}</p>
