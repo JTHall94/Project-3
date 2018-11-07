@@ -5,10 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Post Something!</div>
+                <div class="card-header">Update This Post</div>
 
                 <div class="card-body">
-                  <form method="post" action="{{ route('posts.store') }}">
+                  <form method="post" action="/posts/{{ $post->id }}">
+                      @method('PUT')
                       @csrf
                       <div class="form-group">
                         <input type="title" class="form-control" id="posttitle" name="posttitle" value="{{ $post->title }}">

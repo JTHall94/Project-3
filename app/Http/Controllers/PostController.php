@@ -80,12 +80,12 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
 
-      /*  $post = \App\Post::find($id);
-        $post->name = $request->input('postname');
+        $post = \App\Post::find($id);
+        $post->title = $request->input('posttitle');
+        $post->content = $request->input('postcontent');
         $post->save();
 
-        $request->session()->flash('status', "The post is now titled <strong>{$list->name}</strong>.");
-        return redirect('/home'); */
+        return redirect('/');
 
     }
 
