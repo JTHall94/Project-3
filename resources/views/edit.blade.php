@@ -13,7 +13,7 @@
                       @csrf
                       <div class="form-group">
                         <input type="title" class="form-control" id="posttitle" name="posttitle" value="{{ $post->title }}">
-                        <textarea id="postcontent" name="postcontent" class=" form-control mt-2 mb-2" value="{{ $post->content }}" placeholder="{{ $post->content }}"></textarea>
+                        <textarea id="postcontent" name="postcontent" class=" form-control mt-2 mb-2" value="{{ $post->content }}">{{ $post->content }}</textarea>
                         <input type="hidden" name="post_id" value="{{ $post->id }}">
                         <button type="submit" class="btn btn-primary mt-2 mb-2">Update</button>
                       </div>
