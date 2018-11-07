@@ -10488,6 +10488,10 @@ h1 {
   color: yellow !important;
 }
 
+#registerlink {
+  color: yellow !important;
+}
+
 #postlist {
   margin: auto;
   max-width: 300px;

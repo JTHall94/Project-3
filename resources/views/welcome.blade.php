@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="flex-center position-ref full-height">
+<div>
     <h1 id="Main Title" class="text-center">Fumblr</h1>
     @if (Route::has('login'))
         <div class="text-center">
@@ -11,7 +11,7 @@
                 <a href="{{ route('login') }}" id="welcomelog">Login</a>
 
                 @if (Route::has('register'))
-                    <a href="{{ route('register') }}">Register</a>
+                    <a href="{{ route('register') }}" id="registerlink">Register</a>
                 @endif
             @endauth
         </div>
