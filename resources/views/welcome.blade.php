@@ -20,10 +20,12 @@
 
 <div id="postlist">
     @foreach ($posts as $post)
-    <div class="card mt-3 mb-3" style="width: 18rem;">
+    <div class="card mt-3 mb-3" style="width: 18rem;" id="posted">
         <div class="card-body">
-          <h5 class="card-title">{{ $post->name }}</h5>
+          <p class="card-subtitle text-muted">{{ $post->name }}</p>
+          <h5 class="card-title text-center">{{ $post->title }}</h5>
           <p class="card-text">{{$post->content}}</p>
+          <p class="edit-card"><a href="/posts/{{ $post->id }}/edit">Edit</a></p>
         </div>
     </div>
     @endforeach

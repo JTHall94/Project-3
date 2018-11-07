@@ -18,6 +18,7 @@ class PostsTableSeeder extends Seeder
 
       $post = new \App\Post;
       $post->name = $jacob->name;
+      $post->title = 'Problems';
       $post->content= 'The problem with America is packs of wild dogs controlling most of our major cities.';
       $post->user_id = $jacob->id;
       $post->save();
