@@ -18,8 +18,8 @@ class PostsTableSeeder extends Seeder
 
       $post = new \App\Post;
       $post->name = $jacob->name;
-      $post->title = 'Problems';
-      $post->content= 'The problem with America is packs of wild dogs controlling most of our major cities.';
+      $post->title = 'Test Post';
+      $post->content= 'This is the first test post, created by a seeder file.';
       $post->user_id = $jacob->id;
       $post->save();
     }
