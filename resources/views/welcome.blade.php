@@ -2,7 +2,7 @@
 
 @section('content')
 <div>
-    {{ url()->current() }}
+    <!-- {{ url()->current() }} -->
     <h1 id="Main Title" class="text-center">Fumblr</h1>
     @if (Route::has('login'))
         <div class="text-center">
