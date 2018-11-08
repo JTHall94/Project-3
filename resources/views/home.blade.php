@@ -4,6 +4,15 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            @if ($errors->any())
+              <div class="alert alert-danger">
+                  <ul>
+                      @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                      @endforeach
+                  </ul>
+              </div>
+            @endif
             <div class="card">
                 <div class="card-header">Post Something!</div>
 
@@ -11,8 +20,8 @@
                   <form method="post" action="{{ route('posts.store') }}">
                       @csrf
                       <div class="form-group">
-                        <input type="title" class="form-control" id="posttitle" name="posttitle" placeholder="Enter Title">
-                        <textarea id="postcontent" name="postcontent" class=" form-control mt-2 mb-2"></textarea>
+                        <input type="title" class="form-control" id="posttitle" name="Post Title" placeholder="Enter Title">
+                        <textarea id="postcontent" name="Post Content" class=" form-control mt-2 mb-2"></textarea>
                         <button type="submit" class="btn btn-primary mt-2 mb-2">Submit</button>
                       </div>
                 </div>

@@ -35,14 +35,18 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+      $validatedData = $request->validate([
+              'Post Title' => 'required',
+              'Post Content' => 'required',
+              ]);
+
         $post = new \App\Post;
-        $post->title = $request->input('posttitle');
-        $post->content = $request->input('postcontent');
+        $post->title = $request->input('Post Title');
+        $post->content = $request->input('Post Content');
         $post->name=\Auth::user()->name;
         $post->user_id = \Auth::id();
         $post->save();
 
-        $request->session()->flash('status', "A new post was added!");
         return redirect('/');
     }
 
@@ -79,10 +83,14 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
+      $validatedData = $request->validate([
+              'Post Title' => 'required',
+              'Post Content' => 'required',
+              ]);
 
         $post = \App\Post::find($id);
-        $post->title = $request->input('posttitle');
-        $post->content = $request->input('postcontent');
+        $post->title = $request->input('Post Title');
+        $post->content = $request->input('Post Content');
         $post->save();
 
         return redirect('/');
