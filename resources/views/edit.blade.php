@@ -21,8 +21,8 @@
                       @method('PUT')
                       @csrf
                       <div class="form-group">
-                        <input type="title" class="form-control" id="posttitle" name="Post Title" value="{{ $post->title }}">
-                        <textarea id="postcontent" name="Post Content" class=" form-control mt-2 mb-2" value="{{ $post->content }}">{{ $post->content }}</textarea>
+                        <input type="title" class="form-control" id="title" name="title" value="{{ $post->title }}">
+                        <textarea id="content" name="content" class=" form-control mt-2 mb-2" value="{{ $post->content }}">{{ $post->content }}</textarea>
                         <input type="hidden" name="post_id" value="{{ $post->id }}">
                         <button type="submit" class="btn btn-primary mt-2 mb-2">Update</button>
                       </div>

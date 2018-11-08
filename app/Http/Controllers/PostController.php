@@ -36,13 +36,13 @@ class PostController extends Controller
     public function store(Request $request)
     {
       $validatedData = $request->validate([
-              'Post Title' => 'required',
-              'Post Content' => 'required',
+              'title' => 'required',
+              'content' => 'required',
               ]);
 
         $post = new \App\Post;
-        $post->title = $request->input('Post Title');
-        $post->content = $request->input('Post Content');
+        $post->title = $request->input('title');
+        $post->content = $request->input('content');
         $post->name=\Auth::user()->name;
         $post->user_id = \Auth::id();
         $post->save();
@@ -84,13 +84,13 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
       $validatedData = $request->validate([
-              'Post Title' => 'required',
-              'Post Content' => 'required',
+              'title' => 'required',
+              'content' => 'required',
               ]);
 
         $post = \App\Post::find($id);
-        $post->title = $request->input('Post Title');
-        $post->content = $request->input('Post Content');
+        $post->title = $request->input('title');
+        $post->content = $request->input('content');
         $post->save();
 
         return redirect('/');
@@ -108,14 +108,13 @@ class PostController extends Controller
         $post = \App\Post::find($id);
         $post->delete();
 
-        $request->session()->flash('status', "The post was deleted.");
         return redirect('/');
     }
 
-    public function confirmDelete($id)
+    public function delete($id)
     {
-        //$post = \App\Post::find($id);
-        //return view('Posts.confirmDelete', compact('post'));
+        $post = \App\Post::find($id);
+        return view('delete', compact('post'));
 
     }
 }

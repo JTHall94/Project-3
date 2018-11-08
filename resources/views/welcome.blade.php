@@ -26,6 +26,8 @@
           <h5 class="card-title text-center" id="postcardtitle">{{ $post->title }}</h5>
           <p class="card-text">{{$post->content}}</p>
           <p class="edit-card"><a href="/posts/{{ $post->id }}/edit">Edit</a></p>
+          <p class="delete-card"><a href="/posts/{{ $post->id }}/delete">Delete</a></p>
+
         </div>
     </div>
     @endforeach

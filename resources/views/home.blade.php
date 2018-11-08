@@ -20,8 +20,8 @@
                   <form method="post" action="{{ route('posts.store') }}">
                       @csrf
                       <div class="form-group">
-                        <input type="title" class="form-control" id="posttitle" name="Post Title" placeholder="Enter Title">
-                        <textarea id="postcontent" name="Post Content" class=" form-control mt-2 mb-2"></textarea>
+                        <input type="title" class="form-control" id="title" name="title" placeholder="Enter Title">
+                        <textarea id="content" name="content" class=" form-control mt-2 mb-2"></textarea>
                         <button type="submit" class="btn btn-primary mt-2 mb-2">Submit</button>
                       </div>
                 </div>
